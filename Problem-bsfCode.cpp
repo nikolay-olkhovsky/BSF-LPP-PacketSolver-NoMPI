@@ -20,8 +20,13 @@ This source code has been produced with using BSF-skeleton
 using namespace std;
 
 void PC_bsf_SetInitParameter(PT_bsf_parameter_T* parameter) {
-	for (int j = 0; j < PD_n; j++) // Generating initial approximation
+	for (int j = 0; j < PD_n; j++)// Generating initial approximation
 		parameter->x[j] = PD_u[j];
+
+	parameter->b = 0.;
+	parameter->indexToBlock = 0;
+	parameter->m = 0;
+	parameter->sign = 0;
 };
 
 void PC_bsf_Start(bool* success) {
